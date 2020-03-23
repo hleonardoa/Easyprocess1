@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SISTEMA DE CALCULO DE TIEMPO"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/empresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Los Posquelites"
+            android:textSize="30dp"
+            android:textColor="@color/colorAccent"
+            android:textAlignment="center"
+            android:layout_marginBottom="60dp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <TextView
+                android:id="@+id/textTiempoHrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="70dp"
+                android:text="Ingrese las horas">
+            </TextView>
+
+            <EditText
+                android:id="@+id/editextTiempoHrs"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="70dp"
+                android:layout_below="@+id/textTiempoHrs"
+                android:inputType="number"
+                android:hint="EJEMPLO : 5">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/textTiempoMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese los minutos"
+                android:layout_toRightOf="@+id/textTiempoHrs">
+            </TextView>
+
+            <EditText
+                android:id="@+id/editextTiempoMin"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textTiempoMin"
+                android:layout_toRightOf="@+id/editextTiempoHrs"
+                android:inputType="number"
+                android:hint="Ejemplo : 30 min">
+            </EditText>
+
+            <TextView
+                android:id="@+id/textMpstrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="80dp"
+                android:layout_below="@+id/editextTiempoHrs"
+                android:text="00:00 Horas"
+                android:textSize="@android:dimen/app_icon_size"
+                >
+            </TextView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/altaspr"
+                android:text="ALTAS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+
+            <Button
+                android:id="@+id/consulta"
+                android:text="CONSULTA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schema.android.com/apk/res/res-auto"
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="start"
+            app:menu="@menu/menunavigation"
+            />
+
+         </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
