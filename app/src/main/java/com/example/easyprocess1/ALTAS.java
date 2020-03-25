@@ -29,12 +29,6 @@ public class ALTAS extends AppCompatActivity {
         etnombre =(EditText)findViewById(R.id.Nombre);
         etap =(EditText)findViewById(R.id.Apaterno);
         etam =(EditText)findViewById(R.id.Amaterno);
-        etedad =(EditText)findViewById(R.id.Edad);
-        etphone=(EditText)findViewById(R.id.Telefono);
-        etcorreo=(EditText)findViewById(R.id.Correo);
-        etdirecion=(EditText)findViewById(R.id.Dirrecion);
-        btfemenino=(RadioButton)findViewById(R.id.Femenino);
-        btmasculino=(RadioButton)findViewById(R.id.Masculino);
         agregar=(Button)findViewById(R.id.Agregar);
         inicio = (Button)findViewById(R.id.Inicio);
 

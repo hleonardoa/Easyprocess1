@@ -9,17 +9,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Consulta extends AppCompatActivity {
 
-    private TextView campos;
+    private ListView lista;
+
 
     private void init (){
-        campos = findViewById(R.id.lista);
+        lista = findViewById(R.id.listView);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +48,49 @@ public class Consulta extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         HashMap<Object,Object> registros = new HashMap<>();
+        ArrayList<String> names = new ArrayList<>();
         final ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(getApplicationContext());
         registros = conexion.consultarUsuarios();
-        if(registros.size()>0)
-            campos.setText(registros.toString());
+        if(registros.size()>0) {
+
+            for (int i=1;i<=registros.size();i++){
+                try {
+                    names.add(registros.get(String.valueOf(i)).toString());
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        }
+        MyAdapter adapter = new MyAdapter(this,R.layout.list_item,names);
+        lista.setAdapter(adapter);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+
+
 }

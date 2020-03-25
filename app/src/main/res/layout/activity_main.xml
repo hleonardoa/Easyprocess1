@@ -107,6 +107,13 @@
                 android:layout_height="wrap_content">
             </Button>
 
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm:ss a">
+
+            </TextClock>
         </LinearLayout>
 
 
