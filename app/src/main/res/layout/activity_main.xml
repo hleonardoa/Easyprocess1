@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="70dp"
-                android:text="Ingrese las horas">
+                android:text="Ingerese Hora Inicio">
             </TextView>
 
             <EditText
@@ -52,8 +52,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="70dp"
                 android:layout_below="@+id/textTiempoHrs"
-                android:inputType="number"
-                android:hint="EJEMPLO : 5">
+                android:hint="EJEMPLO : 7:00">
 
             </EditText>
 
@@ -61,7 +60,7 @@
                 android:id="@+id/textTiempoMin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ingrese los minutos"
+                android:text="Ingrese Hora Final"
                 android:layout_toRightOf="@+id/textTiempoHrs">
             </TextView>
 
@@ -71,8 +70,7 @@
                 android:layout_height="40dp"
                 android:layout_below="@+id/textTiempoMin"
                 android:layout_toRightOf="@+id/editextTiempoHrs"
-                android:inputType="number"
-                android:hint="Ejemplo : 30 min">
+                android:hint="Ejemplo : 3:00">
             </EditText>
 
             <TextView

@@ -2,6 +2,7 @@ package com.example.easyprocess1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -9,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.Calendar;
+
+import static java.util.Calendar.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,6 +90,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        horas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar c = getInstance();
+                int hour = c.get(HOUR_OF_DAY);
+                int minute = c.get(MINUTE);
+
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+
+                                horas.setText(hourOfDay + ":" + minute);
+                            }
+                        }, hour, minute, true);
+                timePickerDialog.show();
+
+
+            }
+        });
+
+
+        minutos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar c = getInstance();
+                int hour = c.get(HOUR_OF_DAY);
+                int minute = c.get(MINUTE);
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+                                minutos.setText(hourOfDay + ":" + minute);
+                            }
+                        }, hour, minute, true);
+                timePickerDialog.show();
+            }
+        });
     }
 
     @Override
