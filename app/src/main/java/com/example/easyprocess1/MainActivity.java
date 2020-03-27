@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
 
-/********************************************EVENTOS ONCLICK*****************************************************************************************/
-/*************************************************************************************************************************************/
+        /********************************************EVENTOS ONCLICK*****************************************************************************************/
+        /*************************************************************************************************************************************/
         //Evento Click ALTA
         altas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
         calculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HashMap<Object,Object> lista = Util.CalculoTiempo(tiempoMostrado.getText().toString(),getApplicationContext());
+                Intent ventna = new Intent(view.getContext(),ListaPorPersona.class);
+                ventna.putExtra("time",tiempoMostrado.getText().toString());
+                startActivityForResult(ventna,0);
             }
         });
 /********************************************EVENTOS ONFOCUS*****************************************************************************************/
@@ -82,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
         minutos.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
-                timeshow = tiempoMostrado.getText().toString().substring(0,3);
-                timeshow = timeshow+minutos.getText().toString()+" Horas";
-                tiempoMostrado.setText(timeshow);
+
             }
         });
 
@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onTimeSet(TimePicker view, int hourOfDay,
                                                   int minute) {
                                 minutos.setText(hourOfDay + ":" + minute);
+                                MuestraTiempo();
                             }
                         }, hour, minute, true);
                 timePickerDialog.show();
@@ -160,5 +161,15 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-
+    public void MuestraTiempo(){
+        String time="";
+        if(!horas.getText().toString().equals("") && !minutos.getText().toString().equals("")){
+            time = Util.Calculohoras(horas.getText().toString(),minutos.getText().toString());
+            if(Integer.parseInt(time.split(":")[0])<10)
+                time = "0"+time;
+            if(Integer.parseInt(time.split(":")[1])<10)
+                time = time+time.replace(":",":0"+Integer.parseInt(time.split(":")[1]));
+            tiempoMostrado.setText(time+" Horas");
+        }
+    }
 }

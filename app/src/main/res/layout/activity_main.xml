@@ -52,7 +52,8 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="70dp"
                 android:layout_below="@+id/textTiempoHrs"
-                android:hint="EJEMPLO : 7:00">
+                android:hint="EJEMPLO : 7:00"
+                android:inputType="none">
 
             </EditText>
 
@@ -70,7 +71,8 @@
                 android:layout_height="40dp"
                 android:layout_below="@+id/textTiempoMin"
                 android:layout_toRightOf="@+id/editextTiempoHrs"
-                android:hint="Ejemplo : 3:00">
+                android:hint="Ejemplo : 3:00"
+                android:inputType="none">
             </EditText>
 
             <TextView
@@ -96,7 +98,7 @@
                 android:text="ALTAS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_margin="5dp">
             </Button>
 
             <Button
@@ -104,7 +106,7 @@
                 android:text="CONSULTA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_margin="5dp">
             </Button>
 
             <Button
@@ -112,15 +114,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Calcula Tiempo"
-                android:layout_margin="10dp">
+                android:layout_margin="5dp">
 
             </Button>
-            <TextClock
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:format12Hour="hh:mm:ss a">
-
-            </TextClock>
         </LinearLayout>
 
 
