@@ -89,23 +89,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/altaspr"
                 android:text="ALTAS"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
             </Button>
 
             <Button
                 android:id="@+id/consulta"
                 android:text="CONSULTA"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
             </Button>
 
+            <Button
+                android:id="@+id/calculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calcula Tiempo"
+                android:layout_margin="10dp">
 
+            </Button>
             <TextClock
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

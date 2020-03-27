@@ -23,7 +23,6 @@ public class Util {
         int tiempoPorPersona;
         final ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(context);
 
-
         listaCompleta = conexion.consultarUsuarios();
         //obtenemos las horas
         horas = tiempo.substring(0,2);
@@ -31,14 +30,17 @@ public class Util {
         minutos = tiempo.substring(4,6);
 
         tiempoTotal = (Integer.parseInt(horas) * 60)+ Integer.parseInt(minutos);
-        tiempoPorPersona = (tiempoTotal/listaCompleta.size());
+        tiempoPorPersona = (int)Math.floor(tiempoTotal/listaCompleta.size());
 
         for (int i=1;i<=listaCompleta.size();i++){
-            Object d = listaCompleta.replace(i, "d");
+            listaCompleta.replace(String.valueOf(i),String.valueOf(i)+"");
         }
 
         return listaCompleta;
     }
 
-
+    /*Método ocupado para probar la clase*/
+    public static void main(String[] args) {
+        
+    }
 }

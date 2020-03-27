@@ -12,25 +12,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.easyprocess1.util.Util;
+
 import java.util.Calendar;
+import java.util.HashMap;
 
 import static java.util.Calendar.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button altas, consulta;
+    private Button altas, consulta, calculo;
     private EditText horas;
     private EditText minutos;
     private TextView tiempoMostrado;
     String timeshow = "";
 
     private void init (){
-    altas = (Button)findViewById(R.id.altaspr);
-    consulta = (Button)findViewById(R.id.consulta);
-    horas =  (EditText)findViewById(R.id.editextTiempoHrs);
-    minutos = (EditText)findViewById(R.id.editextTiempoMin);
-    tiempoMostrado = findViewById(R.id.textMpstrado);
-    timeshow =tiempoMostrado.getText().toString();
+    altas =         findViewById(R.id.altaspr);
+    consulta =      findViewById(R.id.consulta);
+    horas =         findViewById(R.id.editextTiempoHrs);
+    minutos =       findViewById(R.id.editextTiempoMin);
+    tiempoMostrado =findViewById(R.id.textMpstrado);
+    calculo =       findViewById(R.id.calculo);
+    timeshow =      tiempoMostrado.getText().toString();
+
 }
 
     @Override
@@ -45,34 +50,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        horas.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                String a =horas.getText().toString();
 
-                return false;
-            }
-        });
-
-        horas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                String timeHrs =horas.getText().toString();
-                tiempoMostrado.setText((timeHrs.length()==1?"0"+timeHrs:timeHrs)+":00 Horas");
-
-            }
-        });
-
-        minutos.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                timeshow = tiempoMostrado.getText().toString().substring(0,3);
-                timeshow = timeshow+minutos.getText().toString()+" Horas";
-                tiempoMostrado.setText(timeshow);
-            }
-        });
-
-        //Evento Click
+/********************************************EVENTOS ONCLICK*****************************************************************************************/
+/*************************************************************************************************************************************/
+        //Evento Click ALTA
         altas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +71,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        calculo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HashMap<Object,Object> lista = Util.CalculoTiempo(tiempoMostrado.getText().toString(),getApplicationContext());
+            }
+        });
+/********************************************EVENTOS ONFOCUS*****************************************************************************************/
+/*************************************************************************************************************************************/
+        minutos.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                timeshow = tiempoMostrado.getText().toString().substring(0,3);
+                timeshow = timeshow+minutos.getText().toString()+" Horas";
+                tiempoMostrado.setText(timeshow);
+            }
+        });
+
+ /*************************************************************************************************************************************/
+ /************************PINTANMOS EL DATAPICKER (RELOJ)*************************************************************************************************************/
         horas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,20 +97,16 @@ public class MainActivity extends AppCompatActivity {
                 int hour = c.get(HOUR_OF_DAY);
                 int minute = c.get(MINUTE);
 
-
                 TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.this,
                         new TimePickerDialog.OnTimeSetListener() {
 
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay,
                                                   int minute) {
-
                                 horas.setText(hourOfDay + ":" + minute);
                             }
                         }, hour, minute, true);
                 timePickerDialog.show();
-
-
             }
         });
 
@@ -133,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
+/*************************************************************************************************************************************/
+/*************************************************************************************************************************************/
+
+
     }
 
     @Override
