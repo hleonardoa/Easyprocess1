@@ -16,6 +16,8 @@ public class ListaPorPersona extends AppCompatActivity {
 
     private Button atras;
 
+
+    String time;
     public void init(){
         atras = findViewById(R.id.atrasListado);
     }
@@ -26,6 +28,8 @@ public class ListaPorPersona extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         init();
+        Intent intent = getIntent();
+        time = intent.getStringExtra("time");
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +41,7 @@ public class ListaPorPersona extends AppCompatActivity {
     }
     public void onStart(){
         super.onStart();
+        System.out.println(time);
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

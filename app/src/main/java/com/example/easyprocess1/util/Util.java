@@ -53,7 +53,7 @@ public class Util {
         mi = Integer.parseInt(Hinicio.split(":")[1]);
         hf = Integer.parseInt(Hfinal.split(":")[0]);
         mf = Integer.parseInt(Hfinal.split(":")[1]);
-        int Hrango = (12-hi)+hf-1;
+        int Hrango = (12-hi)+hf;
         int mrango = mi+mf;
         if (mrango >59){
             Hrango = Hrango+1;
