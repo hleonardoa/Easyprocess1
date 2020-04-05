@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent ventna = new Intent(view.getContext(),ListaPorPersona.class);
-                ventna.putExtra("time",tiempoMostrado.getText().toString());
+                ventna.putExtra("time",tiempoMostrado.getText().toString().replace("HORAS",""));
                 startActivityForResult(ventna,0);
             }
         });

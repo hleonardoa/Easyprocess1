@@ -11,15 +11,17 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ListaPorPersona extends AppCompatActivity {
 
     private Button atras;
-
+    private TextView tiempoPersona;
 
     String time;
     public void init(){
         atras = findViewById(R.id.atrasListado);
+        tiempoPersona = findViewById(R.id.textTiempoPersona);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,10 @@ public class ListaPorPersona extends AppCompatActivity {
     }
     public void onStart(){
         super.onStart();
-        System.out.println(time);
+        time = String.valueOf  ( (Integer.parseInt(time.split(":")[0])*60)+
+                                    (Integer.parseInt(time.split(":")[1].substring(0,2)))
+                );
+        tiempoPersona.setText(tiempoPersona.getText()+" "+time);
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
