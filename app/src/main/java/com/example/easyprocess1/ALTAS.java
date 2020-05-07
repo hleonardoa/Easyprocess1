@@ -1,7 +1,10 @@
+
 package com.example.easyprocess1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,7 @@ public class ALTAS extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,13 @@ public class ALTAS extends AppCompatActivity {
         agregar=(Button)findViewById(R.id.Agregar);
         inicio = (Button)findViewById(R.id.Inicio);
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
         final ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(getApplicationContext());
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +53,36 @@ public class ALTAS extends AppCompatActivity {
 
             }
         });
+
+        inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent objInicio = new Intent(v.getContext(),MainActivity.class);
+                startActivityForResult(objInicio,0);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
+

@@ -3,6 +3,7 @@ package com.example.easyprocess1;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabaseLockedException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -40,7 +41,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
             bd.close();
         }
     }
-
+    /*    metodo que devuelve las listas de usuario en una coleccion de datos tipo HASHMAP*/
     public HashMap<Object,Object> consultarUsuarios(){
         SQLiteDatabase bd=getWritableDatabase();
         HashMap<Object,Object> hashMap = new HashMap<>();
@@ -56,5 +57,15 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
             bd.close();
         }
         return hashMap;
+    }
+
+    public int consultaCount(){
+        SQLiteDatabase bd=getWritableDatabase();
+        int count =0;
+        if (bd!=null){
+            Cursor cursor = bd.rawQuery("SELECT COUNT(*)  FROM ALTAS",null);
+            count = Integer.parseInt(cursor.getString(0));
+        }
+        return count;
     }
 }

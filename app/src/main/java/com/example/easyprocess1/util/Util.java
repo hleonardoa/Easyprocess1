@@ -1,7 +1,7 @@
 package com.example.easyprocess1.util;
 
 import android.content.Context;
-
+import com.example.easyprocess1.util.*;
 import com.example.easyprocess1.ConexionSQLiteHelper;
 
 import java.util.HashMap;

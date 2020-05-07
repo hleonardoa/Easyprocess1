@@ -6,106 +6,125 @@
     android:layout_height="match_parent"
     tools:context=".ALTAS">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/Agregar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="AGREGAR">
-        </Button>
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Id de empleado:"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="179dp"
-            tools:ignore="MissingConstraints" />
-        <EditText
-            android:id="@+id/ID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="213dp"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre:"
-            android:layout_margin="@dimen/cardview_compat_inset_shadow"
-            tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="72dp"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/Nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textColor="@color/colorPrimary"
-            tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="452dp"
-            tools:ignore="MissingConstraints" />
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apellido Paterno"
-            tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="72dp"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/Apaterno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="110dp"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apellido Materno"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="179dp"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/Amaterno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="213dp"
-            tools:ignore="MissingConstraints" />
 
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/Inicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="INICIO"></Button>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Id de empleado:"
+                tools:layout_editor_absoluteX="154dp"
+                tools:layout_editor_absoluteY="179dp"
+                tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                tools:layout_editor_absoluteX="98dp"
+                tools:layout_editor_absoluteY="213dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre:"
+                android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                tools:layout_editor_absoluteX="156dp"
+                tools:layout_editor_absoluteY="72dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                tools:layout_editor_absoluteX="98dp"
+                tools:layout_editor_absoluteY="452dp"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apellido Paterno"
+                tools:layout_editor_absoluteX="156dp"
+                tools:layout_editor_absoluteY="72dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/Apaterno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="110dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apellido Materno"
+                tools:layout_editor_absoluteX="154dp"
+                tools:layout_editor_absoluteY="179dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/Amaterno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                tools:layout_editor_absoluteX="98dp"
+                tools:layout_editor_absoluteY="213dp"
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+            <Button
+                android:id="@+id/Inicio"
+                android:text="Inicio"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp">
+            </Button>
+
+            <Button
+                android:id="@+id/Agregar"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:text="Agregar">
+            </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
